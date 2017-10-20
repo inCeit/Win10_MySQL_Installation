@@ -45,7 +45,8 @@
   PS:cd .\bld
   PS:cmake --build . --target package
 ```
-这样就会在
+这样就会在.\bld文件夹下应该会生成.zip文件结尾的压缩包，本次测试在最后压缩阶段出现错误，但程序可以正常运行。
+
 ![安装图片](https://github.com/inCeit/Win10_MySQL_Installation/blob/master/pictures/%E5%BE%AE%E4%BF%A1%E6%88%AA%E5%9B%BE_20171020151049.png)
 
 执行上命令的结果：
