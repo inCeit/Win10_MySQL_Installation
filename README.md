@@ -27,11 +27,25 @@
 1. 依次测试每个软件的安装情况，当出现下面的结果时说明安装完成；另外Boost库已经下载解压至C:\boost_1_59_0。
 
 ![安装图片](https://github.com/inCeit/Win10_MySQL_Installation/blob/master/pictures/%E5%BE%AE%E4%BF%A1%E6%88%AA%E5%9B%BE_20171020150907.png)
+
+```PowerShell
+  注意修改sql\sql_locale.cc编码格式，方法为用EditPlus或其他软件打开保存为Uncode编码，不然编译可能不通过。
+```
+
 ## 开始安装
-1. 进入到源码包内，建立bld文件夹，运行以下命令：
+1. 进入到源码包内，建立bld文件夹，运行以下命令（设置编译器、设置boost库的位置）生成VS2017解决方案文件：
+
 ```PowerShell
   PS:cmake .. -G "Visual Studio 15 Win64" -DWITH_BOOST=C:\boost_1_59_0
 ```
+
+也可以直接生成zip安装文件：
+
+```PowerShell
+  PS:cd .\bld
+  PS:cmake --build . --target package
+```
+这样就会在
 ![安装图片](https://github.com/inCeit/Win10_MySQL_Installation/blob/master/pictures/%E5%BE%AE%E4%BF%A1%E6%88%AA%E5%9B%BE_20171020151049.png)
 
 执行上命令的结果：
