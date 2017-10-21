@@ -56,9 +56,9 @@
 
 ![安装图片](https://github.com/inCeit/Win10_MySQL_Installation/blob/master/pictures/%E5%BE%AE%E4%BF%A1%E6%88%AA%E5%9B%BE_20171020151348.png)
 
-2. 打开VS2017（最好以管理员身份运行），依次：“文件”->“打开”->“项目/解决方案”，进入刚才生成的.\bld文件夹，打开MySQL.sln。找到mysld工程，右键选择：“属性”->“调试”，在“命令参数”一栏写入：--console --initialize（命令行方式启动，并初始化）。
+2. 打开VS2017（最好以管理员身份运行），依次：“文件”->“打开”->“项目/解决方案”，进入刚才生成的.\bld文件夹，打开MySQL.sln。找到mysld工程，右键选择：“属性”->“调试”，在“命令参数”一栏写入：--initialize（命令行方式启动，并初始化）。
 
-![安装图片](https://github.com/inCeit/Win10_MySQL_Installation/blob/master/pictures/%E5%BE%AE%E4%BF%A1%E6%88%AA%E5%9B%BE_20171020151724.png)
+![安装图片](https://github.com/inCeit/Win10_MySQL_Installation/blob/master/pictures/initialize.png)
 
 3.设置完毕后，右键mysqld，点击：“调试”->“生成新实例”，开始编译并调试程序，预计20分钟左右。编译完成后如果没有错误，则mysqld会启动完成初始化，并会自动退出，并在.\bld\sql\data文件夹内生产.err的文件。打开.err结尾的文件到最后一行查看为root@localhost生成的密码，并复制。（此密码第一次登陆时记得修改）
 
