@@ -7,31 +7,42 @@
 #### 必须预先安装的软件
 
 
-1. CMake，本次使用的是CMake3.9x64版，绿色安装，官网zip包;
+1. CMake，本次使用的是CMake3.9x64版，绿色安装，官网zip包(绿色版需要配置环境变量);
+
+```PowerShell
+  我的电脑（右键）-> 属性 -> 高级系统设置 ->环境变量，在下面“系统变量”里编辑 Path的值，增加CMake解压的路径。
+```
 
 2. 一个make程序，虽然一些平台有自己的make类工具，但强烈建议使用GNU make3.75（或更高版本），可从这里下载：http://www.gnu.org/software/make/
 
 3. ANSI标准C++编译器（注：make文件中要求Windows上最低版本为VS2013）
 
-4. 安装Boost C++ libraries（构建MySQL需要使用，MySQL本身不用），Boost 1.59.0必须安装，安装完成过后必须告诉CMake从哪里找到Boost库。（Boost 1.59.0下载地址：https://sourceforge.net/projects/boost/files/boost/1.59.0/）
-```PowerShell
-  PS: cmake . -DWITH_BOOST=/usr/local/boost_1_59_0
-```
-5. ncurses库——5.7手册上没要求，官网要求，实测不用安装
+4. 安装Boost C++ libraries（构建MySQL需要使用，MySQL本身不用），Boost 1.59.0必须安装（下载直接解压缩就可以），安装完成过后必须告诉CMake从哪里找到Boost库。（Boost 1.59.0下载地址：https://sourceforge.net/projects/boost/files/boost/1.59.0/）
 
 ```PowerShell
-  ** 注意：以上软件安装要保证安装路径没空格，且以管理员身份执行。 **
+  PS: cmake . -DWITH_BOOST=C:\boost_1_59_0
+```
+5.bison 2.4.1或更新版本(安装路径不能包含空格如“Program Files”)
+
+6. ncurses库——5.7手册上没要求，官网要求，实测不用安装
+
+```PowerShell
+  ** 注意：以上软件安装要以管理员身份执行安装，不然会出现错误。 **
 ```
 
 #### 检查下软件安装情况
 
 
-1. 依次测试每个软件的安装情况，当出现下面的结果时说明安装完成；另外Boost库已经下载解压至C:\boost_1_59_0。
+1. 依次测试每个软件的安装情况，当出现下面的结果时说明安装完成。
 
 ![安装图片](https://github.com/inCeit/Win10_MySQL_Installation/blob/master/pictures/%E5%BE%AE%E4%BF%A1%E6%88%AA%E5%9B%BE_20171020150907.png)
 
+
+#### 编译前的准备工作
+
 ```PowerShell
   注意修改sql\sql_locale.cc编码格式，方法为用EditPlus或其他软件打开保存为Uncode编码，不然编译可能不通过。
+  注意修改sql\mysqld.cc中4344行 DBUG_ASSERT(0) 改为 DBUG_ASSERT(1)
 ```
 
 ## 2.开始安装
@@ -46,6 +57,10 @@
 
 ```PowerShell
   PS:cd .\bld
+  PS:cmake .. -DWITH_BOOST=C:\boost_1_59_0
+  ~
+  ~ 输出
+  ~
   PS:cmake --build . --target package
 ```
 这样就会在.\bld文件夹下应该会生成.zip文件结尾的压缩包，本次测试在最后压缩阶段出现错误，但程序可以正常运行。
