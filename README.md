@@ -6,7 +6,6 @@
 
 #### 必须预先安装的软件
 
-***
 
 1. CMake，本次使用的是CMake3.9x64版，绿色安装，官网zip包;
 
@@ -22,7 +21,6 @@
 
 #### 检查下软件安装情况
 
-***
 
 1. 依次测试每个软件的安装情况，当出现下面的结果时说明安装完成；另外Boost库已经下载解压至C:\boost_1_59_0。
 
@@ -32,7 +30,8 @@
   注意修改sql\sql_locale.cc编码格式，方法为用EditPlus或其他软件打开保存为Uncode编码，不然编译可能不通过。
 ```
 
-## 开始安装
+## 2.开始安装
+
 1. 进入到源码包内，建立bld文件夹，运行以下命令（设置编译器、设置boost库的位置）生成VS2017解决方案文件：
 
 ```PowerShell
@@ -76,6 +75,5 @@
   msyql> alter user 'root'@'localhost' identified by 'Abc123!'
 ```
 
-![欢迎画面](https://github.com/inCeit/Win10_MySQL_Installation/blob/master/pictures/QQ%E6%88%AA%E5%9B%BE20171020211422.png)
 
 ***
