@@ -63,7 +63,7 @@
   ~
   PS:cmake --build . --target package
 ```
-这样就会在.\bld文件夹下应该会生成.zip文件结尾的压缩包，本次测试在最后压缩阶段出现错误，但程序可以正常运行。
+这样就会在.\bld\_CPack_Packages\win32\ZIP文件夹下应该会生成.zip文件结尾的压缩包。
 
 ![安装图片](https://github.com/inCeit/Win10_MySQL_Installation/blob/master/pictures/%E5%BE%AE%E4%BF%A1%E6%88%AA%E5%9B%BE_20171020151049.png)
 
@@ -71,7 +71,11 @@
 
 ![安装图片](https://github.com/inCeit/Win10_MySQL_Installation/blob/master/pictures/%E5%BE%AE%E4%BF%A1%E6%88%AA%E5%9B%BE_20171020151348.png)
 
-2. 打开VS2017（最好以管理员身份运行），依次：“文件”->“打开”->“项目/解决方案”，进入刚才生成的.\bld文件夹，打开MySQL.sln。找到mysld工程，右键选择：“属性”->“调试”，在“命令参数”一栏写入：--initialize（命令行方式启动，并初始化）。
+2. 打开VS2017（最好以管理员身份运行），依次：“文件”->“打开”->“项目/解决方案”，进入刚才生成的.\bld文件夹，打开MySQL.sln。找到mysld工程（MySQL守护程序），右键选择：“属性”->“调试”，在“命令参数”一栏写入：--initialize（命令行方式启动，并初始化）。
+
+```PowerShell
+  第一次调试后，也可以用CMD 进入.\bld\sql\Debug\，运行.\mysqld.exe --console直接启动MySQL服务器。
+```
 
 ![安装图片](https://github.com/inCeit/Win10_MySQL_Installation/blob/master/pictures/initialize.png)
 
@@ -82,9 +86,10 @@
 ```PowerShell
   PS: .\mysqld.exe --console
 ```
+
 ![安装图片](https://github.com/inCeit/Win10_MySQL_Installation/blob/master/pictures/%E5%BE%AE%E4%BF%A1%E6%88%AA%E5%9B%BE_20171020153850.png)
 
-5.选择msyql工程，右键选择“属性”->“调试”，命令参数写入：-uroot -p ，在弹出的窗口中把生成的密码粘贴进窗口，如果一切顺利，就应该可以看到MySQL的欢迎界面。
+5.选择mysql工程（MySQL客户端），右键选择“属性”->“调试”，“命令参数”写入：-uroot -p ，在弹出的窗口中把生成的密码粘贴进窗口，如果一切顺利，就应该可以看到MySQL的欢迎界面。
 
 ![安装图片](https://github.com/inCeit/Win10_MySQL_Installation/blob/master/pictures/QQ%E6%88%AA%E5%9B%BE20171020211238.png)
 
@@ -93,6 +98,5 @@
 ```PowerShell
   msyql> alter user 'root'@'localhost' identified by 'Abc123!'
 ```
-
 
 ***
