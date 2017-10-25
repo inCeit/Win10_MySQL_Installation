@@ -3,6 +3,9 @@
 在Win10下编译调试MySQL5.7.20记录
 
 ## 1.Prerequisite
+#### 安装环境
+
+![安装环境](https://github.com/inCeit/Win10_MySQL_Installation/blob/master/pictures/clipboard.png)
 
 #### 必须预先安装的软件
 
