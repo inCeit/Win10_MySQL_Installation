@@ -2,6 +2,7 @@
 
 在Win10下编译调试MySQL5.7.20记录
 
+Ubuntu 16.04下编译安装的坑：[传送门]（http://note.youdao.com/share/?id=b610697af0f40235b674427b582a2ce3&type=note#/）
 ## 1.Prerequisite
 #### 安装环境
 
