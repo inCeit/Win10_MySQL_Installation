@@ -92,7 +92,7 @@
 
 ![安装图片](https://github.com/inCeit/Win10_MySQL_Installation/blob/master/pictures/%E5%BE%AE%E4%BF%A1%E6%88%AA%E5%9B%BE_20171020153850.png)
 
-5.选择mysql工程（MySQL客户端），右键选择“属性”->“调试”，“命令参数”写入：-uroot -p ，在弹出的窗口中把生成的密码粘贴进窗口，如果一切顺利，就应该可以看到MySQL的欢迎界面。
+5.选择mysql工程（MySQL客户端），右键选择“属性”->“调试”，“命令参数”写入：-uroot -p ，再右键“调试”->“生成新实例”，在弹出的窗口中把生成的密码粘贴进窗口，如果一切顺利，就应该可以看到MySQL的欢迎界面。
 
 ![安装图片](https://github.com/inCeit/Win10_MySQL_Installation/blob/master/pictures/QQ%E6%88%AA%E5%9B%BE20171020211238.png)
 
